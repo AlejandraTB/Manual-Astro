@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+
+const pageTitle = "Sobre mi"
+
+const identify = {
+	firstName: "Sara",
+	country: "Colombia",
+	occupation: "Codificadora",
+	hobbies: ["fotografía", "observación de aves"],
+}
+
+const skills = ["HTML", "CSS", "JavaScript", "Astro", "React"]
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = "crimson";
+const fontWeight = "bold";
+const textCase = "uppercase";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<style define:vars={{ skillColor, fontWeight, textCase }}>
+		h1 {
+			color:purple;
+			font-size: 4rem;
+		}
+		.skill {
+			color: var(--skillColor);
+			font-weight: var(--fontWeight);
+			text-transform: var(--textCase);
+		}
+	</style>
+	<h1>{pageTitle}</h1>
+	<h2>... ¡y mi nuevo sitio Astro!</h2>
+
+	<p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda página de mi sitio web, ¡y es la primera que he construido yo mismo!</p>
+	<p>Este sitio se irá actualizando a medida que vaya aprendiendo nuevas cosas.</p>
+
+	<h3>Algunos datos sobre mi:</h3>
+	<ul>
+		<li>Me llamo {identify.firstName}.</li>
+		<li>Vivo en {identify.country} y trabajo como {identify.occupation}.</li>
+		<li>Mis aficiones son: {identify.hobbies[0]} y {identify.hobbies[1]}.</li>
+	</ul>
+	<p>Mis habilidades técnicas son:</p>
+	<ul>
+		{skills.map((skill) => <li class="skill">{skill}</li>)}
+	</ul>
+
+	{happy && <p>¡Estoy feliz de aprender Astro!</p>}
+	{finished && <p>¡He terminado el curso de Astro!</p>}
+	{goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
+
+</BaseLayout>
