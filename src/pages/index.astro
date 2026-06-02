@@ -1,10 +1,25 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
-
-const pageTitle = "Página de inicio"
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Página de inicio";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<h1>Manual de referencia</h1>
-	<h2>Mi impresionante subtítulo del blog</h2>
-</BaseLayout>	
+  <div class="w-full max-w-4xl mx-auto p-6 md:p-12">
+    
+    <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-2xl space-y-6">
+      
+      <div class="text-center">
+        <h1 class="text-4xl font-extrabold text-white mb-2 leading-tight">Manual de Referencia Astro</h1>
+        <h2 class="text-xl font-semibold text-white">¡Bienvenido a mi manual de reference Astro!</h2>
+      </div>
+
+      <div class="bg-slate-900 rounded-xl border border-slate-800 w-full block">
+        <p class="p-8 mt-6 text-center text-1xl">
+          Este manual técnico detalla el desarrollo de un sitio web estático multipágina creado con Astro, el cual sirve como referencia para aplicar conceptos de layouts, componentes, pages y estilos con Tailwind CSS. La guía abarca desde los requisitos previos e instalación en Linux utilizando un proyecto de ejemplo, hasta las extensiones necesarias.
+        </p>
+      </div>
+
+
+    </div>
+  </div>
+</BaseLayout>

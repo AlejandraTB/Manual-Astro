@@ -1,23 +1,20 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'Mi primera publicación en el blog'
+title: 'Requisitos Previos e Instalación'
 pubDate: 2026-05-19
-description: 'Esta es la primera publicación de mi nuevo blog Astro.'
-author: 'Fulanito de Tal'
-image: 
-  url: 'https://images.seeklogo.com/logo-png/42/1/astro-logo-png_seeklogo-428045.png'
-  alt: 'Logo de Astro'
+description: 'Aqui podemos ver los requisitos necesarios y el proceso de la instalacion de Astro.'
+author: 'Paula Alejandra Tabares'
+image:
+    url: 'https://images.seeklogo.com/logo-png/42/1/astro-logo-png_seeklogo-428045.png'
+    alt: 'Logo de Astro'
 tags: ["astro", "bloguear", "aprender en público"]
 ---
 
-¡Bienvenido a mi _nuevo blog_ sobre el aprendizaje de Astro! Aquí compartiré sobre mi viaje de aprendizaje de este framework.
+1. Verificar los requisitos previos
+Antes de instalar Astro, necesitas tener Node.js (versión 18.14.1 o superior) y NPM instalados en tu sistema Linux. Verifica tus versiones corriendo:
 
-## Lo que he conseguido
-
-1. **Instalación de Astro:** según indicaciones de Astro con npm.
-2. **Creación de páginas:** nuevo archivos `.astro` en la carpeta `src/pages`.
-3. **Creación de publicaciones:** en formato Markdown.
-
-### Proximos pasos
-
-Seguiré añadiendo más contenido.
+```bash
+node -v
+npm --v
+```
+2. 

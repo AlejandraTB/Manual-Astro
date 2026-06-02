@@ -1,14 +1,11 @@
 ---
-const { platform, username } = Astro.props
+const { platform, username } = Astro.props;
 ---
-<style>
-  a {
-    padding: 0.5rem 1rem;
-    color: white;
-    background-color: #4c1d95;
-    text-decoration: none;
-    border-radius: 15px;
-  }
-</style>
 
-<a href={`https://www.${platform}.com/${username}`} target="_blank">{platform}</a>
+<a 
+  href={`https://www.${platform}.com/${username}`}
+  target="_blank"
+  class="px-5 py-2 text-sm rounded-xl text-slate-300 bg-slate-900 border border-slate-700 hover:text-white hover:bg-slate-800 transition-all duration-200 shadow-md inline-block text-center"
+>
+  {platform}
+</a>

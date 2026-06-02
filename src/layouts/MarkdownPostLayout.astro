@@ -1,11 +1,50 @@
 ---
+import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<meta charset="utf-8" />
-<h1>{frontmatter.title}</h1>
-<p>Escrito por: {frontmatter.author}</p>
-<p>Publicado el: {frontmatter.pubDate.toString().slice(0, 10)}</p>
-<img src={frontmatter.image.url} alt={frontmatter.image.alt} width="200px">
+<BaseLayout pageTitle={frontmatter.title}>
+  <div class="w-full max-w-3xl mx-auto p-6 md:p-12">
+    
+    <article class="bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-2xl space-y-6">
+      
 
-<slot />
+      <div class="border-b border-slate-700 pb-6 space-y-3">
+        <h1 class="text-4xl font-extrabold text-white leading-tight">
+          {frontmatter.title}
+        </h1>
+        
+        <div class="flex flex-wrap gap-4 text-sm text-slate-400">
+          <p> Escrito por: <span class="text-purple-400 font-semibold">{frontmatter.author}</span></p>
+          <p>Publicado el: <span class="text-slate-300 font-medium">{frontmatter.pubDate.toString().slice(0,10)}</span></p>
+        </div>
+      </div>
+
+      {frontmatter.image && (
+        <div class="w-full bg-slate-950 rounded-xl p-4 border border-slate-700/50 flex justify-center items-center">
+          <img 
+            src={frontmatter.image.url} 
+            alt={frontmatter.image.alt} 
+            class="max-h-48 object-contain rounded-lg shadow-md"
+          />
+        </div>
+      )}
+
+      <p class="text-slate-400 italic text-base border-l-4 border-purple-500 pl-4 bg-slate-900/40 py-2 rounded-r-lg">
+        {frontmatter.description}
+      </p>
+
+      <!-- 
+        El secreto de Tailwind para Markdown: 
+        'prose' y 'prose-invert' estilizan automáticamente tus listas, 
+        párrafos y los bloques oscuros de la terminal (como 'node -v')
+      -->
+      <div class="text-justify max-w-none prose prose-invert prose-slate prose-p:text-slate-200 prose-headings:text-white prose-li:text-slate-300 prose-pre:bg-slate-900 prose-pre:border prose-pre:border-slate-700 prose-pre:rounded-xl">
+        <slot />
+      </div>
+
+
+    </article>
+    
+  </div>
+</BaseLayout>
