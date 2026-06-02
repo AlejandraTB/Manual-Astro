@@ -1,7 +1,7 @@
 ---
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-import '../styles/global.css'
+// import '../styles/global.css'
 
 const {pageTitle} = Astro.props
 ---
@@ -14,8 +14,10 @@ const {pageTitle} = Astro.props
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <style is:global>
+      @import "../styles/global.css"
+    </style>
   </head>
-  <!-- Aquí aplicamos el color oscuro para que tome TODA la hoja completa -->
   <body class="bg-[#0f172a] text-slate-200 min-h-screen m-0 p-0 flex flex-col justify-between">
     <div>
       <Navigation />
