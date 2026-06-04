@@ -10,56 +10,35 @@ image:
 tags: ["astro", "bloguear", "aprender en público"]
 ---
 
+# Tailwind CSS
 
-## Requisitos previos
+Tailwind CSS es un framework de estilos que permite diseñar páginas web utilizando clases predefinidas. En lugar de escribir grandes archivos CSS, los estilos se aplican directamente en los elementos mediante clases.
 
-Dirigirse en VS a package.json y en la parte de scripts, despues de astro poner:
+En este proyecto, Tailwind CSS se utiliza para mejorar la apariencia del manual técnico y crear una interfaz más moderna y agradable para el usuario.
 
- bash
-"start": "astro dev",
+## ¿Para qué sirve?
 
-Luego debajo de ese mismo poner: 
+Tailwind facilita la creación de diseños rápidos y organizados. Gracias a sus clases utilitarias, es posible modificar colores, tamaños, márgenes, sombras y muchos otros aspectos sin necesidad de crear reglas CSS personalizadas.
 
-bash
-"deploy": "astro build && gh-pages -d dist"
+## Ejemplo básico
 
-
-ahora te diriges a astro.config.mjs en la parte de "export default defineConfig({" y justo debajo poner:
-
-bash
-site: 'https://tu-hombre-de-usuario.github.io',
+html
+<button class="bg-blue-600 text-white px-4 py-2 rounded-lg">
+    Guardar
+</button>
 
 
-Despues debajo de ese mismo pones: 
+En este ejemplo:
 
-bash
-base: '/Nombre-de-tu-repositorio',
+* bg-blue-600 aplica un fondo azul.
+* text-white cambia el color del texto a blanco.
+* px-4 py-2 agrega espacio interno.
+* rounded-lg crea bordes redondeados.
 
-No olvides el slash! (/)
+Estas clases permiten personalizar colores, bordes y espacios de forma sencilla.
 
-## Instalacion de Deploy
+## Uso en este proyecto
 
-Ahora tienes que hacer el siguiente paso en la terminal de VS:
+El diseño de este manual técnico se basa en Tailwind CSS. Los colores, márgenes, sombras, bordes y tipografías se aplican mediante clases utilitarias, lo que permite mantener un código limpio y fácil de entender.
 
- bash
-npm install -D gh-pages
-
-
-## Github
-
-Luego te diriges a tu repositorio en Github
-Vas a la parte de settings (configuraciones)
-Luego a la seccion de pages
-Buscas el apartado de build and deployment
-en la parte de source miras que este en deploy from a branch (mas adelante usaremos github actions)
-Por defecto en la parte de branch se pone gh-pages, si no lo tienes asi te toca hacerlo manualmente
-
-
-
-## Visual Studio Code
-Ahora entras a la terminal de github y pones:
-
-bash
-npm run deploy
-
-Luego vuelves a Github y ya tienes el link, puedes acceder dandole al link directo o en el boton de Visit site.
+Gracias a Tailwind CSS es posible crear interfaces modernas y atractivas sin necesidad de escribir grandes cantidades de código CSS.
